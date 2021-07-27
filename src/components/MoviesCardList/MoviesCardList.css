@@ -28,3 +28,7 @@
     flex-direction: column;
   }
 }
+
+.movie-btn_active {
+  background-color: #EE3465;
+}
