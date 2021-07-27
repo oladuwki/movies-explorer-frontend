@@ -1,0 +1,83 @@
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
+
+.search {
+  width: 100%;
+  display: flex;
+  background-color: #fafafa;
+  flex-direction: column;
+}
+
+.search__line {
+  border-bottom: 1px solid #E8E8E8;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.search__form-input {
+  width: 1060px;
+  height: 48px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #A0A0A0;
+}
+
+.search__form-button {
+  width: 70px;
+  height: 44px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #FFFFFF;
+  background-color: #3456F3;
+  border: none;
+  border-radius: 40px;
+}
+
+.search__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 89.06%;
+  margin: auto;
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 768px){
+  .search__form {
+    width: 92.19%;
+  }
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  width: 156px;
+  margin: auto;
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #000000;
+}
+
+.filter__btn {
+  border: none;
+  background-color: #fafafa;
+}

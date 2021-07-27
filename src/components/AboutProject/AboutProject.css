@@ -1,0 +1,220 @@
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
+
+.about {
+  background-color: #FAFAFA;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px){
+  .about {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .about {
+    max-width: 425px;
+  }
+}
+
+.about__title-line {
+  border-bottom: 1px solid #000000;
+  width: 89.06%;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px){
+  .about__title-line{
+    width: 86.98%;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .about__title-line {
+    margin-bottom: 4px;
+  } 
+}
+
+.about__title {
+  width: 89.06%;
+  font-style: normal;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  color: #000000;
+  margin: auto;
+  padding: 0%;
+  margin-top: 110px;
+  padding-bottom: 22px;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px){
+  .about__title{
+    width: 86.98%;
+    margin-left: 0%;
+    margin: auto;
+    margin-top: 90px;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .about__title {
+    width: 88.75%;
+    margin: auto;
+    margin-top: 70px;
+    padding-bottom: 28px;
+  }
+}
+
+.about__time-web {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #A0A0A0;
+  margin: 0%;
+  padding: 0%;
+  margin-top: 14px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+}
+
+.about__time-frontend {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+}
+
+.about__time-frontend_background {
+  background-color: #F2F2F2;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__time-backend {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+}
+
+.about__time-backend_background {
+  background-color: #3456F3;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__time {
+  width: 89.06%;
+  margin: auto;
+  margin-top: 110px;
+  margin-bottom: 110px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px){
+  .about__time{
+    width: 86.98%;
+    margin: auto;
+    grid-template-columns: 20.96% 79.04%;
+    margin-top: 93px;
+    margin-bottom: 121px;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .about__time{
+    width: 88.75%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    column-gap: 0;
+    grid-template-columns: 35.21% 64.79%;
+  }
+}
+
+.about__table-title {
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #000000;
+  margin: 0%;
+  padding: 0%;
+}
+
+@media screen and (max-width: 425px){
+  .about__table-title {
+    margin-top: 56px;
+  }
+}
+
+.about__table-subtitle {
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  margin: 0%;
+  padding: 0%;
+  margin-top: 26px;
+}
+
+.about__table {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 48.25%);
+  column-gap: 40px;
+  margin-top: 71px;
+  width: 89.06%;
+}
+
+@media screen and (max-width: 768px){
+  .about__table{
+    width: 86.98%;
+    grid-template-columns: repeat(2, 47.75%);
+    column-gap: 4.5%;
+    margin-top: 70px;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .about__table {
+    display: flex;
+    flex-direction: column;
+    width: 88.75%;
+    margin-top: 0;
+  }
+}

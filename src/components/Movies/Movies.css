@@ -1,0 +1,27 @@
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
+
+.movies {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.movies-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movies-btn {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  height: 36px;
+  border: none;
+  background: #F4F4F4;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
