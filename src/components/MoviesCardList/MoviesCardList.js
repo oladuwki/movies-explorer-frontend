@@ -25,7 +25,7 @@ function MoviesCardList(props) {
       <MoviesCard isSave = { handleSaveBtn } button = 'Сохранить' buttonActive = " ✓ " isClick = {isSaveBtn ? 'movie-btn_active' : '' } isClose = {closeSaveBtn} />
     </Route>
     <Route exact path = '/saved-movies'>
-      <SavedMovies isSave = { handleSaveBtn } button = '✖' buttonActive = " ✓ " isClick = {isSaveBtn ? '' : 'movie-btn_active' } isClose = {closeSaveBtn} />
+      <SavedMovies isSave = { handleSaveBtn } button = '×' buttonActive = " ✓ " isClick = {isSaveBtn ? '' : 'movie-btn_active' } isClose = {closeSaveBtn} />
     </Route>
     </Switch>
     

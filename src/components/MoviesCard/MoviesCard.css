@@ -10,11 +10,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin: auto;
 }
 
 .movies-card__title {
+  width: 74.07%;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -26,6 +27,7 @@
 }
 
 .movies-card__time {
+  width: 21.6%;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
