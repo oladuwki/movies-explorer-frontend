@@ -1,7 +1,5 @@
 import './AboutProject.css';
 import React from "react";
-import baner from "../../images/baner.svg"
-import { Link, Route, Switch } from 'react-router-dom';
 
 function AboutProject() {
   return (

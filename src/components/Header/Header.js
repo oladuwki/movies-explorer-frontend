@@ -2,14 +2,40 @@ import './Header.css';
 import logo from "../../images/logo.png";
 import profile from '../../images/profile.png'
 import openPopup from '../../images/openPopup.svg';
-import React from "react";
+import BurgerMenu from '../BurgerMenu/BurgerMenu.js';
+import React, { useState } from "react";
 import { Link, Route, Switch } from 'react-router-dom';
 
-function Header(props) {
+function Header({loggedIn}) {
+
+  const [openMenu, setOpenMenu] = useState(true);
+  function handleOpen() {
+    setOpenMenu(false);
+  }
+  function handleClose() {
+    setOpenMenu(true);
+  }
+
   return (
     <Switch>
       <Route exact path = '/'>
-      <div className = 'header'>
+      {loggedIn ? (
+        <div className = 'header'>
+        <div className = 'header-profile__container'>
+            <div>
+            <Link to = '/'><img src={ logo } alt = 'logo' className = 'header-profile__logo' /></Link>
+            </div>
+            <div className = 'header-profile__movie-box'>
+              <Link to = '/movies' className = 'header-profile__movies'>Фильмы</Link>
+              <Link to = '/saved-movies' className = 'header-profile__saved-movies'>Сохраненные фильмы</Link>
+            </div>
+            <img onClick={handleOpen} src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' />
+            <BurgerMenu open={openMenu} close={handleClose} />
+          </div>
+          <Link to = '/profile'><img src = {profile} alt = 'profile' className = 'header-profile__image' /></Link>
+        </div>
+      ) : (
+        <div className = 'header'>
         <div className = 'header__container'>
           <Link to = '/'><img src={ logo } alt = 'logo' className = 'header__logo' /></Link>
           <div className = 'header__auth'>
@@ -18,6 +44,7 @@ function Header(props) {
           </div>
         </div>
       </div>
+      )}
       </Route>
       <Route path = '/signup'>
         <div className = 'header-register'>
@@ -42,10 +69,11 @@ function Header(props) {
             <Link to = '/'><img src={ logo } alt = 'logo' className = 'header-profile__logo' /></Link>
             </div>
             <div className = 'header-profile__movie-box'>
-              <Link to = '/movies' className = 'header-profile__movies'>Фильмы</Link>
+              <Link to = '/movies' className = 'header-profile__movies header-decoration'>Фильмы</Link>
               <Link to = '/saved-movies' className = 'header-profile__saved-movies'>Сохраненные фильмы</Link>
             </div>
-            <button onClick = {props.onMenu} type = 'button' className = {`header__popup-btn ${props.isMenuIcon}`}><img src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' /></button>
+            <img onClick={handleOpen} src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' />
+            <BurgerMenu open={openMenu} close={handleClose} />
           </div>
           <Link to = '/profile'><img src = {profile} alt = 'profile' className = 'header-profile__image' /></Link>
         </div>
@@ -58,11 +86,12 @@ function Header(props) {
             </div>
             <div className = 'header-profile__movie-box'>
               <Link to = '/movies' className = 'header-profile__movies'>Фильмы</Link>
-              <Link to = '/saved-movies' className = 'header-profile__saved-movies'>Сохраненные фильмы</Link>
+              <Link to = '/saved-movies' className = 'header-profile__saved-movies header-decoration'>Сохраненные фильмы</Link>
             </div>
           </div>
           <Link to = '/profile'><img src = {profile} alt = 'profile' className = 'header-profile__image' /></Link>
-          <button onClick = {props.onMenu} type = 'button' className = {`header__popup-btn ${props.isMenuIcon}`}><img src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' /></button>
+          <button onClick={handleOpen} type = 'button' className = {`header__popup-btn`}><img src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' />
+            <BurgerMenu open={openMenu} close={handleClose} /></button>
         </div>
       </Route>
       <Route path = '/profile'>

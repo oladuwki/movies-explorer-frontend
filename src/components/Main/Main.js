@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, Route, Switch } from 'react-router-dom';
 import Promo from '../Promo/Promo';
 import "./Main.css";
 import AboutProject from '../AboutProject/AboutProject';

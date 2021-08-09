@@ -45,21 +45,8 @@ function Footer() {
           </div>
         </div>
       </Route>
-      <Route path = '/signup'>
-      <div className = 'register-footer'>
-        <div className = 'register-footer__container'>
-          <button className = 'register-footer__btn'>Зарегестрироваться</button>
-          <span className = 'register-footer__span'>Уже зарегестрированы? <Link to = '/signin' className = 'register-footer__link'>Войти</Link></span>
-        </div>
-      </div>
-      </Route>
       <Route path = '/signin'>
-      <div className = 'login-footer'>
-        <div className = 'login-footer__container'>
-          <button className = 'login-footer__btn'>Войти</button>
-          <span className = 'login-footer__span'>Ещё не зарегистрированы? <Link to = 'signup' className = 'login-footer__link'>Регистрация</Link></span>
-        </div>
-      </div>
+      
       </Route>
     </Switch>
     

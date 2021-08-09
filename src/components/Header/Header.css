@@ -210,20 +210,6 @@
   }
 }
 
-.header-profile__saved-movies {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 18px;
-  font-family: 'Inter', ‘Arial’, sans-serif;
-  width: 145px;
-  height: 18px;
-  color: #000000;
-  font-style: normal;
-  margin: 0%;
-  padding: 0%;
-}
-
 .header-profile__movies {
   font-style: normal;
   font-weight: normal;
@@ -238,6 +224,26 @@
   text-decoration: none;
   height: 18px;
 }
+
+.header-profile__saved-movies {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  width: 145px;
+  height: 18px;
+  color: #000000;
+  font-style: normal;
+  margin: 0%;
+  padding: 0%;
+  text-decoration: none;
+}
+.header-decoration {
+  text-decoration: underline;
+}
+
+
 
 .header-profile__movie-box {
   display: flex;

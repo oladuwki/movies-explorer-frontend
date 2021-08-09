@@ -1,36 +1,105 @@
-import './MoviesCardList.css';
-import React from "react";
-import { Link, Route, Switch } from 'react-router-dom';
-import MoviesCard from '../MoviesCard/MoviesCard';
-import SavedMovies from '../SavedMovies/SavedMovies';
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import MoviesCard from "../MoviesCard/MoviesCard";
+import Preloader from "../Preloader/Preloader";
+import './MoviesCardList.css'
+import { pcWidth, tabletWidth, phoneWidth } from "../../utils/constants";
 
+function MoviesCardList({
+  foundMovies,
+  preloader,
+  toggleLikeHandler,
+  savedMovies,
+  movieAdded,
+}) {
+  const [showFoundMovies, setShowFoundMovies] = useState([]);
+  let count;
 
-function MoviesCardList(props) {
-
-  const [isSaveBtn, setSaveBtn] = useState(false);
-
-  function handleSaveBtn() {
-    setSaveBtn(true);
+  function getQuantity(windowSize) {
+    if (windowSize >= pcWidth) {
+      return { first: 12, next: 3 };
+    }
+    if (windowSize > phoneWidth && windowSize <= tabletWidth) {
+      return { first: 8, next: 2 };
+    }
+    return { first: 5, next: 2 };
   }
 
-  function closeSaveBtn() {
-    setSaveBtn(false);
+  const resizeHandler = () => {
+    const windowSize = window.innerWidth;
+    const countFirst = getQuantity(windowSize);
+    if (!count || count.first !== countFirst.first) {
+      count = countFirst;
+      setShowFoundMovies(foundMovies.slice(0, count.first));
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
+
+  useEffect(() => {
+    resizeHandler();
+  }, []);
+
+  useEffect(() => {
+    const windowSize = window.innerWidth;
+    const countFirst = getQuantity(windowSize);
+    count = countFirst;
+    setShowFoundMovies(foundMovies.slice(0, count.first));
+  }, [foundMovies]);
+
+  function addMore() {
+    const windowSize = window.innerWidth;
+    const countNext = getQuantity(windowSize);
+    count = countNext;
+    const last = showFoundMovies.length;
+    setShowFoundMovies(
+      showFoundMovies.concat(foundMovies.slice(last, last + count.next))
+    );
   }
 
   return (
-    <div>
-    <Switch>
-    <Route exact path = '/movies'>
-      <MoviesCard isSave = { handleSaveBtn } button = 'Сохранить' buttonActive = " ✓ " isClick = {isSaveBtn ? 'movie-btn_active' : '' } isClose = {closeSaveBtn} />
-    </Route>
-    <Route exact path = '/saved-movies'>
-      <SavedMovies isSave = { handleSaveBtn } button = '×' buttonActive = " ✓ " isClick = {isSaveBtn ? '' : 'movie-btn_active' } isClose = {closeSaveBtn} />
-    </Route>
-    </Switch>
-    
-    </div>
+    <>
+      <div className='line'></div>
+      {showFoundMovies.length !== 0 ? (
+        <>
+          {preloader ? (
+            <Preloader />
+          ) : (
+            <>
+              <section className='movies-cards'>
+                {showFoundMovies.map((item) => {
+                  return (
+                    <MoviesCard
+                      card={item}
+                      key={item.id}
+                      toggleLikeHandler={toggleLikeHandler}
+                      savedMovies={savedMovies}
+                      movieAdded={movieAdded}
+                    />
+                  );
+                })}
+              </section>
+              {showFoundMovies.length < foundMovies.length && (
+                <div className='movies-loading'>
+                  <button
+                    onClick={addMore}
+                    className='movies-btn'
+                  >
+                    Еще
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+        </>
+      ) : (
+        <h3 className='text-nothing-found'>Ничего не найдено</h3>
+      )}
+    </>
   );
 }
-
 export default MoviesCardList;

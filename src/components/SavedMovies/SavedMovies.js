@@ -1,97 +1,61 @@
-import React from "react";
-import { Link, Route, Switch } from 'react-router-dom';
-import SearchForm from '../SearchForm/SearchForm'
-import MoviesCardList from '../MoviesCardList/MoviesCardList'
 import './SavedMovies.css';
-import close from "../../images/close.svg";
-import profile from '../../images/profile.png';
-import card from "../../images/card.png"
+import React, { useState, useEffect } from "react";
+import MoviesCardList from "./MoviesCardList";
+import SearchForm from "../SearchForm/SearchForm";
+import { DURATION_MOVIE } from "../../utils/constants";
 
-function SavedMovies(props) {
+function SavedMovies({ toggleLikeHandler, movieAdded, savedMovies }) {
+  const [showFoundMovies, setShowFoundMovies] = useState([]);
+  const [preloader, setPreloader] = useState(false);
+
+  useEffect(() => {
+    setShowFoundMovies(savedMovies);
+  }, [savedMovies]);
+
+  const [filter, setfilter] = useState(false);
+  const filterMovies = (movies) =>
+    movies.filter((item) => item.duration < DURATION_MOVIE);
+
+  const onFilter = () => {
+    setfilter(!filter);
+  };
+
+  function handleSearchMovies(data) {
+    setPreloader(true);
+    const filteredArray = savedMovies.filter((obj) => {
+      return (
+        obj.description?.toLowerCase().includes(data.toLowerCase()) ||
+        obj.director?.toLowerCase().includes(data.toLowerCase()) ||
+        obj.nameEN?.toLowerCase().includes(data.toLowerCase()) ||
+        obj.nameRU?.toLowerCase().includes(data.toLowerCase())
+      );
+    });
+
+    setShowFoundMovies(filteredArray);
+
+    setTimeout(() => {
+      setPreloader(false);
+    }, 300);
+  }
+
   return (
-    <div className = 'movies-cards'>
-    <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-        <button onClick = { props.isSave } onClose = { props.isClose } className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-      <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне за Бенкси</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-        <button onClick = {props.isSave} className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-      <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне за Бенкси</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-        <button onClick = {props.isSave} className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-      <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне за Бенкси</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-        <button onClick = {props.isSave} className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-      <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне за Бенкси</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-          <button onClick = {props.isSave} className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-      <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне за Бенкси</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-        <button onClick = {props.isSave} className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-      <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне за Бенкси</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-        <button onClick = {props.isSave} className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-      <div className = 'movies-card__container'>
-        <div className = 'movies-card__title-box'>
-          <h2 className = 'movies-card__title'>В погоне за Бенкси</h2>
-          <p className = 'movies-card__time'>27 минут</p>
-        </div>
-        <img src = { card } alt = 'card' className = '' className = 'movies-card__image' />
-        <div className = 'movies-card__button-box'>
-        <button onClick = {props.isSave} className = {`movies-card__button ${props.isClick}`} type = 'button'>{props.isClick ? props.buttonActive : props.button}</button>
-        </div>
-      </div>
-    </div>
+    <>
+      <SearchForm onSearch={handleSearchMovies} onFilter={onFilter} />
+      <section className='movies'>
+        {savedMovies.length !== 0 || showFoundMovies.length !== 0 ? (
+          <MoviesCardList
+            movieAdded={movieAdded}
+            preloader={preloader}
+            showFoundMovies={
+              filter ? filterMovies(showFoundMovies) : showFoundMovies
+            }
+            toggleLikeHandler={toggleLikeHandler}
+          />
+        ) : (
+          <h3 className='text-nothing-found'>Ничего не найдено</h3>
+        )}
+      </section>
+    </>
   );
 }
-
 export default SavedMovies;

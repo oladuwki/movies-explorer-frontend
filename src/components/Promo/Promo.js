@@ -1,8 +1,7 @@
 import './Promo.css';
 import React from "react";
-import baner from "../../images/baner.svg"
-import baner320 from "../../images/baner320.png"
-import { Link, Route, Switch } from 'react-router-dom';
+import baner from "../../images/baner.svg";
+import baner320 from "../../images/baner320.png";
 
 function Promo() {
   return (

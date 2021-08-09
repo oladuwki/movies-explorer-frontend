@@ -1,15 +1,12 @@
 import React from "react";
-import './MoviesCard.css'
-import { URL_NOMOREPATIES } from "../../utils/constants";
 
 function MoviesCard({ card, toggleLikeHandler, movieAdded }) {
+  console.log(card);
   let added = movieAdded(card);
-
-  const deleteSaveClick = (e) => {
+  const handleToggleClick = (e) => {
     e.preventDefault();
     toggleLikeHandler(card, !added);
   };
-
   function timeHandler(data) {
     let hour = Math.trunc(data / 60);
     let minut = data % 60;
@@ -24,22 +21,22 @@ function MoviesCard({ card, toggleLikeHandler, movieAdded }) {
         <p className='movies-card__time'>{timeHandler(card.duration)}</p>
         
       </div>
-      <a href={card.trailerLink} rel='noreferrer' target='_blank'>
+      <a href={card.trailer} rel='noreferrer' target='_blank'>
         <img
           className='movies-card__image'
-          src={`${URL_NOMOREPATIES}` + card.image.url}
+          src={card.image}
           alt='Фото заставка фильма'
         />
       </a>
       <button
-          onClick={deleteSaveClick}
+          onClick={handleToggleClick}
           className={
             added
-              ? "movies-card__button movie-btn_active"
+              ? "movies-card__button "
               : "movies-card__button"
           }
           type='button'
-        >{added ? '✓' : 'Сохранить'}</button>
+        >×</button>
     </div>
       
     </article>

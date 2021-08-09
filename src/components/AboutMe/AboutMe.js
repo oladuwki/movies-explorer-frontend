@@ -1,6 +1,5 @@
 import './AboutMe.css';
 import React from "react";
-import { Link, Route, Switch } from 'react-router-dom';
 import myPhoto from '../../images/myPhoto.jpg'
 
 function AboutMe() {

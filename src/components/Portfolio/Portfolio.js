@@ -1,7 +1,6 @@
 import './Portfolio.css';
 import React from "react";
 import arrow from "../../images/arrow.png"
-import { Link, Route, Switch } from 'react-router-dom';
 
 function Portfolio() {
   return (
