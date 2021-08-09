@@ -21,7 +21,7 @@ function Profile({ signOut, editUserInfo, errorProfile, preloader }) {
   }, [nameError, emailError]);
 
   useEffect(() => {
-    if (name === "") {
+    if (!name) {
       setNameError("Имя не должен быть пустым");
     } else if (name.length < 2) {
       setNameError("Имя не должно быть больше 2х букв");
