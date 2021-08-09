@@ -27,11 +27,27 @@
   margin-bottom: 123px;
 }
 
+.profile__error {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #EE3465;
+  display: none;
+  margin-bottom: 6px;
+}
+
+.profile__error_active {
+  display: flex;
+}
+
 @media screen and (max-width: 768px){
   .profile__title {
     margin-top: 236px;
   }
 }
+
 
 .profile__name {
   width: 141px;
@@ -127,5 +143,36 @@
 @media screen and (max-width: 768px){
   .profile__box:last-child {
     margin-bottom: 210px;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .profile__box {
+    width: 100%;
+  }
+
+  .profile__input {
+    width: 46.15%;
+  }
+
+  .profile__line {
+    width: 100%;
+  }
+
+  .profile__container {
+    width: 81.25%;
+  }
+
+  .profile__exit-btn {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .profile__edit-btn {
+    width: 100%;
+  }
+
+  .profile__buttons {
+    width: 93.75%;
   }
 }

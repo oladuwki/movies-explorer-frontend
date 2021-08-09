@@ -54,6 +54,9 @@
   margin-bottom: 6px;
 }
 
+.register__error_active {
+  display: flex;
+}
 /* .register__error:last-child {
   margin-bottom: 65px;
 } */

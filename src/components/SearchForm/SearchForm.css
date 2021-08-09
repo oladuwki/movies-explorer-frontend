@@ -8,6 +8,25 @@
   flex-direction: column;
 }
 
+.search__error {
+  width: 89.06%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #EE3465;
+  display: none;
+  margin: auto;
+  margin-bottom: 6px;
+  margin-top: 10px;
+  
+}
+
+.search__error_active {
+  display: flex;
+}
+
 .search__line {
   border-bottom: 1px solid #E8E8E8;
   margin-top: 40px;

@@ -70,7 +70,11 @@ function Profile({ signOut, editUserInfo, errorProfile, preloader }) {
        </div>
        <div className = 'profile__line'></div>
        {nameError && (
-              <span id='name-input-error' className='profile__input-error'>
+              <span id='name-input-error' className={
+            nameError
+              ? "profile__error profile__error_active"
+              : "profile__error"
+          }>
                 {nameError}
               </span>
             )}
@@ -86,7 +90,11 @@ function Profile({ signOut, editUserInfo, errorProfile, preloader }) {
          />
        </div>
        {emailError && (
-              <span id='email-input-error' className='profile__input-error'>
+              <span id='email-input-error' className={
+            emailError
+              ? "profile__error profile__error_active"
+              : "profile__error"
+          }>
                 {emailError}
               </span>
             )}
@@ -100,7 +108,11 @@ function Profile({ signOut, editUserInfo, errorProfile, preloader }) {
               value='Редактировать'>Редактировать</button>
         <Link to = 'signin' onClick={signOut} className = 'profile__exit-btn'>Выйти из аккаунта</Link>
         {errorProfile && (
-            <span id='submit-error' className='child-form__input-error'>
+            <span id='submit-error' className={
+            errorProfile
+              ? "profile__error profile__error_active"
+              : "profile__error"
+          }>
               Ошибка редактирования
             </span>
           )}

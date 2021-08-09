@@ -102,7 +102,11 @@ function Register({ preloader, error, onRegister }) {
         />
         <div className = 'register__line'></div>
         {nameDirty && nameError && (
-          <span id='name-input-error' className = 'register__error'>
+          <span id='name-input-error' className={
+            nameError
+              ? "register__error register__error_active"
+              : "register__error"
+          }>
             {nameError}
           </span>
         )}
@@ -119,7 +123,11 @@ function Register({ preloader, error, onRegister }) {
         />
         <div className = 'register__line'></div>
         {emailDirty && emailError && (
-          <span id='email-input-error' className = 'register__error'>
+          <span id='email-input-error' className={
+            emailError
+              ? "register__error register__error_active"
+              : "register__error"
+          }>
             {emailError}
           </span>
         )}
@@ -136,7 +144,11 @@ function Register({ preloader, error, onRegister }) {
         />
         <div className = 'register__line'></div>
         {passwordDirty && passwordError && (
-          <span id='password-input-error' className = 'register__error'>
+          <span id='password-input-error' className={
+            passwordError
+              ? "register__error register__error_active"
+              : "register__error"
+          }>
             {passwordError}
           </span>
         )}

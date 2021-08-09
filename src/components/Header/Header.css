@@ -116,6 +116,10 @@
     background-color: #fafafa;
   }
 
+  .header__popup-menu_logeddin {
+    background-color: #DDDEE3;
+  }
+
   .header__popup-close {
     display: flex;
     background-color: #fafafa;
@@ -191,7 +195,7 @@
   .header-movies {
     width: 100%;
     padding: 0%;
-    margin: 0%;
+    margin: auto;
   }
 }
 

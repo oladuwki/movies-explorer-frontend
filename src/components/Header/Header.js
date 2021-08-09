@@ -29,7 +29,7 @@ function Header({loggedIn}) {
               <Link to = '/movies' className = 'header-profile__movies'>Фильмы</Link>
               <Link to = '/saved-movies' className = 'header-profile__saved-movies'>Сохраненные фильмы</Link>
             </div>
-            <img onClick={handleOpen} src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' />
+            <img onClick={handleOpen} src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu header__popup-menu_logeddin' />
             <BurgerMenu open={openMenu} close={handleClose} />
           </div>
           <Link to = '/profile'><img src = {profile} alt = 'profile' className = 'header-profile__image' /></Link>
@@ -88,10 +88,11 @@ function Header({loggedIn}) {
               <Link to = '/movies' className = 'header-profile__movies'>Фильмы</Link>
               <Link to = '/saved-movies' className = 'header-profile__saved-movies header-decoration'>Сохраненные фильмы</Link>
             </div>
+            
+            <img onClick={handleOpen} src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' />
+            <BurgerMenu open={openMenu} close={handleClose} />
           </div>
           <Link to = '/profile'><img src = {profile} alt = 'profile' className = 'header-profile__image' /></Link>
-          <button onClick={handleOpen} type = 'button' className = {`header__popup-btn`}><img src = { openPopup } alt = 'openPopup-btn' className = 'header__popup-menu' />
-            <BurgerMenu open={openMenu} close={handleClose} /></button>
         </div>
       </Route>
       <Route path = '/profile'>

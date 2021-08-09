@@ -23,8 +23,18 @@ function SearchForm({ onSearch, onFilter }) {
     <div className = 'search'>
       <form className = 'search__form' noValidate onSubmit={handleSubmit}>
         <input className = 'search__form-input' required onChange={handleInput} placeholder = 'Фильмы' />
+        
         <button className = 'search__form-button'>Найти</button>
       </form>
+      {error && (
+        <span id='input-error' className={
+            error
+              ? "search__error search__error_active"
+              : "search__error"
+          }>
+          {error}
+        </span>
+      )}
       <div className = 'filter'>
         <label className='filter-check-box__switch' htmlFor='checkbox'>
           <input
@@ -38,11 +48,7 @@ function SearchForm({ onSearch, onFilter }) {
         <p className = 'filter__text'>Короткометражки</p>
       </div>
       <div className = 'search__line'></div>
-      {error && (
-        <span id='input-error' className='profile__input-error'>
-          {error}
-        </span>
-      )}
+      
     </div>
   );
 }

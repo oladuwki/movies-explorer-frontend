@@ -16,6 +16,7 @@ function Login({ error, onLogin }) {
   useEffect(() => {
     if (emailError || passwordError) {
       setFormValid(false);
+      
     } else {
       setFormValid(true);
     }
@@ -79,7 +80,11 @@ function Login({ error, onLogin }) {
         />
         <div className = 'login__line'></div>
         {emailDirty && emailError && (
-          <span id='email-input-error' className = 'login__error'>
+          <span id='email-input-error'  className={
+            emailError
+              ? "login__error login__error_active"
+              : "login__error"
+          }>
             {emailError}
           </span>
         )}
@@ -94,11 +99,15 @@ function Login({ error, onLogin }) {
           onChange={(event) => passwordHandler(event)}
         />
         <div className = 'login__line'></div>
-        {emailDirty && emailError && (
-          <span id='email-input-error' className = 'login__error'>
-            {emailError}
-          </span>
-        )}
+        {passwordDirty && passwordError && (
+            <span id='password-input-error' className={
+            passwordError
+              ? "login__error login__error_active"
+              : "login__error"
+          }>
+              {passwordError}
+            </span>
+          )}
           <div className = 'login-footer'>
             <div className = 'login-footer__container'>
               <button className = 'login-footer__btn'

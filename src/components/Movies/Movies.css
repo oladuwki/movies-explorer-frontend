@@ -26,5 +26,11 @@
   width: 25%;
 }
 
+.text-nothing-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @import url(../../vendor/normalize.css);
 @import url(../../fonts/inter/Inter_Web/inter.css);
