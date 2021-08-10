@@ -1,0 +1,178 @@
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px){
+  .profile {
+    max-width: 768px;
+  }
+}
+
+.profile__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #000000;
+  margin: 0%;
+  padding: 0%;
+  margin-top: 74px;
+  margin-bottom: 123px;
+}
+
+.profile__error {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #EE3465;
+  display: none;
+  margin-bottom: 6px;
+}
+
+.profile__error_active {
+  display: flex;
+}
+
+@media screen and (max-width: 768px){
+  .profile__title {
+    margin-top: 236px;
+  }
+}
+
+
+.profile__name {
+  width: 141px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #000000;
+  margin: 0%;
+  padding: 0%;
+}
+
+.profile__line {
+  width: 410px;
+  border-bottom: 1px solid #E8E8E8;
+  margin-bottom: 17px;
+}
+
+.profile__input {
+  width: 122px;
+  height: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #000000;
+  margin: 0%;
+  padding: 0%;
+  border: none;
+}
+
+.profile__exit-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  text-align: center;
+  color: #EE3465;
+  width: 410px;
+  border: none;
+  background-color: #ffffff;
+}
+
+.profile__edit-btn {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  text-align: center;
+  width: 410px;
+  border: none;
+  color: #000000;
+  background-color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  width: 410px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__buttons {
+  display: flex;
+  flex-direction: column;
+  width: 410px;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.profile__box {
+  width: 410px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 14px;
+  margin-bottom: 16px;
+}
+
+.profile__box:last-child {
+  margin-bottom: 220px;
+}
+
+@media screen and (max-width: 768px){
+  .profile__box:last-child {
+    margin-bottom: 210px;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .profile__box {
+    width: 100%;
+  }
+
+  .profile__input {
+    width: 46.15%;
+  }
+
+  .profile__line {
+    width: 100%;
+  }
+
+  .profile__container {
+    width: 81.25%;
+  }
+
+  .profile__exit-btn {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .profile__edit-btn {
+    width: 100%;
+  }
+
+  .profile__buttons {
+    width: 93.75%;
+  }
+}

@@ -1,0 +1,88 @@
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
+
+.login {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #A0A0A0;
+  margin: 0%;
+  margin-bottom: 5px;
+  padding: 0%;
+}
+
+.login__line {
+  border-bottom: 1px solid #E8E8E8;;
+  margin-bottom: 6px;
+  width: 395px;
+}
+
+.login__line:last-child {
+  margin-bottom: 65px;
+}
+
+.login__input {
+  border: none;
+  width: 395px;
+  margin-bottom: 10px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.login__error {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  color: #EE3465;
+  display: none;
+  margin-bottom: 6px;
+}
+
+.login__error_active {
+  display: flex;
+}
+
+/* .register__error:last-child {
+  margin-bottom: 65px;
+} */
+
+.login__container {
+  display: flex;
+  width: 396px;
+  margin: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 425px){
+  .login__container {
+    width: 81.25%;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .login__line {
+    width: 100%;
+  }
+
+  .login__input {
+    width: 100%;
+  }
+}

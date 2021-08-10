@@ -1,0 +1,108 @@
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
+
+.promo {
+  background-color: #DDDEE3;
+  width: 100%;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px){
+  .promo {
+    max-width: 100%;
+    padding: 0%;
+    margin: 0%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .promo {
+    max-width: 100%;
+    padding: 0%;
+    margin: 0%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.promo__title {
+  font-family: 'Inter', ‘Arial’, sans-serif;
+  width: 48.91%;
+  height: 104px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -0.04em;
+  color: #000000;
+  margin: 0%;
+  margin-top: 50px;
+  margin-left: 70px;
+  padding: 0%;
+}
+
+@media screen and (max-width: 768px){
+  .promo__title {
+    width: 88.54%;
+    margin: 0%;
+    margin-top: 300px;
+    padding: 0%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .promo__title {
+    height: 117px;
+    width: 93.75%;
+    margin: 0%;
+    margin-top: 300px;
+    padding: 0%;
+    font-size: 31px;
+    line-height: 39px;
+    margin-top: 183px;
+  }
+}
+
+.promo__baner-320 {
+  display: none;
+}
+
+@media screen and (max-width: 425px){
+  .promo__baner-320 {
+    display: flex;
+    width: 100%;
+    height: 230px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+}
+
+.promo__baner {
+  width: 56.41%;
+  height: 244px;
+  opacity: 0.7;
+  align-items: center;
+  margin-left: 38.13%;
+  margin-top: 102px;
+}
+
+@media screen and (max-width: 768px){
+  .promo__baner{
+    margin: 0%;
+    max-width: 88.53%;
+    height: 230px;
+    margin-top: 140px;
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .promo__baner{
+    display: none;
+  }
+}

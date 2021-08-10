@@ -1,0 +1,34 @@
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
+
+.movies-cards {
+  margin: auto;
+  margin-top: 70px;
+  width: 89.06%;
+  display: grid;
+  grid-template-columns: repeat(3, 31.58%);
+  gap: 17px;
+  background-color: #fafafa;
+}
+
+@media screen and (max-width: 768px){
+  .movies-cards {
+    width: 92.19%;
+    grid-template-columns: repeat(2, 48.31%);
+    column-gap: 3.39%;
+    row-gap: 35px;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .movies-cards {
+    width: 93.75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.movie-btn_active {
+  background-color: #EE3465;
+}
